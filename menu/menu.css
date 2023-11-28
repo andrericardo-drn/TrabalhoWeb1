@@ -12,13 +12,12 @@
     align-items: center;
     height: 100vh;
     margin: 0;
-    background-color: #eee;
+    background-image: url(/assets/14350820_5471985.jpg);
   }
 
   .container {
     width: 1000px;
     height: 700px;
-    background-image: url(/assets/14350820_5471985.jpg);
     display: flex;
     flex-direction: row;
     justify-content: center;
