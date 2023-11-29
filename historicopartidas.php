@@ -1,6 +1,6 @@
 <?php 
-include(__DIR__ . '/../config.php');
-require 'autenticacao.php';
+include 'php/credentials.php';
+require 'php/autenticacao.php';
 
 
 $conn = mysqli_connect($servername, $username, $password, $dbname);
@@ -36,6 +36,7 @@ if(!$result){
     }
 
     th, td {
+      color: white;
       border: 1px solid #ddd;
       padding: 8px;
       text-align: left;
@@ -47,8 +48,9 @@ if(!$result){
   </style>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="menu.css">
     <link rel="shortcut icon" href="/assets/favicon.ico" type="image/x-icon">
-    <title>Histórico do Jogador</title>
+    <title>Histórico de partidas </title>
     <?php if ($result->num_rows > 0) { ?>
       <table>
         <tr>

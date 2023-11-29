@@ -1,6 +1,6 @@
 <?php 
 
-include 'credentials.php';
+include 'php/credentials.php';
 
 //conexão
 $conn = mysqli_connect($servername, $username, $password);
@@ -54,8 +54,10 @@ $sql = "CREATE TABLE IF NOT EXISTS `liga` (
   
 // pOPULANDO tabela liga
   $sql =  "INSERT INTO `liga` (`IdLiga`, `PalavraChaveLiga`, `NomeLiga`, `PontuacaoTotalLiga`, `PontuacaoSemanalLiga`, `DescricaoLiga`, `ImagemLogoLiga`, `DataCriacaoLiga`) VALUES
-  (1, 'Abobrinha', 'Liga das aboboras', 1220, 520, NULL, '', '0000-00-00'),
-  (2, 'Alexkutzke', 'Liga do professor', 3222, 849, NULL, '', '0000-00-00');
+  (4, 'cachorros', 'Dog League', 93825, 5, NULL, '', '2023-09-09'),
+  (3, 'ligadenovo', 'Mais uma Liga', 123122, 5125, NULL, '', '2023-09-09'),
+  (2, 'ligalegal', 'Liga dos jogadores legais', 3222, 849, NULL, '', '2023-09-09'),
+  (1, 'osmelhores', 'Liga dos Melhores', 1220, 520, NULL, '', '2023-09-09');
   ";
 
   if (mysqli_multi_query($conn, $sql)) {
@@ -85,7 +87,11 @@ if (mysqli_query($conn, $sql)) {
 $sql =  "INSERT INTO `partida` (`IdPartida`, `IdPlayer_player`, `PontuacaoPartida`, `DataPartida`) VALUES
 (1, 4, 4242, '2023-11-29'),
 (2, 5, 2323, '2020-11-29'),
-(3, 4, 23232, '2017-11-29');";
+(3, 4, 23232, '2017-11-29'),
+(4, 5, 425, '2023-11-29'),
+(5, 5, 323, '2023-11-29'),
+(6, 4, 24552, '2023-11-29'),
+(7, 14, 2147483647, '2023-11-29');";
 
 if (mysqli_multi_query($conn, $sql)) {
     echo "<br>inserted successfully<br>";
@@ -118,11 +124,9 @@ if (mysqli_query($conn, $sql)) {
 }
 
 $sql =  "INSERT INTO `player` (`IdPlayer`, `NomePlayer`, `UsuarioPlayer`, `EmailPlayer`, `SenhaPlayer`, `DescricaoPlayer`, `PontuacaoTotalPlayer`, `PontuacaoSemanalPlayer`) VALUES
-(4, 'THIAGAOXD', 'thiagopernilongo123', 'thiagogamer@gmail.com', 'pernilongao123', NULL, NULL, NULL),
-(5, 'oitudobem', '123', '123@gmail.com', '123', NULL, NULL, NULL),
-(7, '1233', '1233', '1234@gmail.com', '1233', NULL, NULL, NULL),
-(9, 'thalesdoprado', '112', '117@gmail.com', '117', NULL, NULL, NULL),
-(10, 'sssss', 'ss', 'ss@gmail.com', 'ss', NULL, NULL, NULL);
+(4, 'ThiagoDoidao', 'pernilongo', 'thiagogamer@gmail.com', 'pernilongo123', NULL, NULL, NULL),
+(5, 'UmJogador', 'jogador', 'jogador@gmail.com', 'jogador123', NULL, NULL, NULL),
+(14, 'XxSenhordasTrevasxX', 'naruto123', 'felipe.dias@gmail.com', 'amonaruto', NULL, NULL, NULL);
 ";
 
 if (mysqli_multi_query($conn, $sql)) {

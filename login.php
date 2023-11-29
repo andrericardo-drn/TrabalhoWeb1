@@ -1,6 +1,6 @@
 <?php
 session_start();
-include('credentials.php');
+include('php/credentials.php');
 require "php/autenticacao.php";
 
 if ($login) {

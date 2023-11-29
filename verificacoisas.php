@@ -1,5 +1,5 @@
 <?php
-include 'config.php';
+include 'php/credentials.php';
 require 'php/autenticacao.php';
 
 $delete = "";
@@ -13,25 +13,43 @@ if(!$conn){
 
 $sql = "use $dbname";
 $query = mysqli_query($conn, $sql);
+$errotabela = 0;
 
 if(!$query){
   die('Error:' . mysqli_connect_error());
 }
-
-$sql = "select NomePlayer, UsuarioPlayer, SenhaPlayer, EmailPlayer FROM player";
-$query_jogadores = mysqli_query($conn, $sql);
-
-if(!$query_jogadores){
-  die('Error:' . mysqli_connect_error());
+else{
+  echo 'Conexão DB funciona';
 }
+
+$sql = "select * FROM player";
+$query_player = mysqli_query($conn, $sql);
+
+if(!$query_player){
+  die('Error:' . mysqli_connect_error());
+  $errotabela = 1;
+}
+
 
 $sql = "select * from liga";
-$query_ligas = mysqli_query($conn, $sql);
+$query_liga = mysqli_query($conn, $sql);
 
-if(!$query_ligas){
+if(!$query_liga){
   die('Error:' . mysqli_connect_error());
+  $errotabela = 1;
 }
 
+$sql = "select * from partida";
+$query_partida = mysqli_query($conn, $sql);
+
+if(!$query_partida){
+  die('Error:' . mysqli_connect_error());
+  $errotabela = 1;
+}
+
+if($errotabela){
+  echo 'Erro ao conectar com alguma das tabelas';
+}
 if(!$login){
   $user_id = 0;
 }

@@ -7,6 +7,8 @@
     <title>Página da Liga</title>
 </head>
 <body>
+    <h1>Página da Liga</h1>
+
     <?php
     require_once "credentials.php";
     // Conectar ao banco de dados
@@ -18,7 +20,7 @@
     }
 
     // Consulta SQL para recuperar dados da liga
-    $sql = "SELECT IdLiga, PalavraChaveLiga, NomeLiga, PontuacaoTotalLiga, PontuacaoSemanalLiga FROM liga";
+    $sql = "SELECT * from player";
     $result = $conn->query($sql);
 
     // Verificar se há resultados
@@ -26,19 +28,13 @@
     ?>
         <!-- Seção de Todos os Jogadores -->
         <section>
+            <h3>Todos os Jogadores</h3>
             <ul>
                 <?php while ($row = $result->fetch_assoc()) : ?>
-                    <p><?php echo 'Nome: ' ?><?php echo $row['NomeLiga']; ?><p>
-                    <p><?php echo 'Total: ' ?><?php echo $row['PontuacaoTotalLiga']; ?><p>
-                    <p><?php echo 'Semanal: ' ?><?php echo $row['PontuacaoSemanalLiga']; ?><p>
-                        <br>
-                   
-                        
+                    <li><?php echo $row['NomePlayer']; ?></li>
                 <?php endwhile; ?>
             </ul>
         </section>
-
-        
     <?php
     } else {
         echo "Não há jogadores na liga.";

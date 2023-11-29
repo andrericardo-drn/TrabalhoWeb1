@@ -21,8 +21,8 @@ $welcome_message = "Bem-vindo, " . $_SESSION["user_name"];
                 <?php echo $welcome_message; ?>
             </h1>
             <button class="btn btn-sm animated-button thar-three"><a href="teste.html">Novo Jogo</a></button>
-            <button class="btn btn-sm animated-button thar-three"><a href="#">Histórico de Partidas</a></button>
-            <button class="btn btn-sm animated-button thar-three"><a href="#">Ligas</a></button>
+            <button class="btn btn-sm animated-button thar-three"><a href="historicopartidas.php">Histórico de Partidas</a></button>
+            <button class="btn btn-sm animated-button thar-three"><a href="ligas.php"> Ligas </a></button>
         </div>
     </div>
 </body>
