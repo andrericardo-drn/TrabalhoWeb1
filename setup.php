@@ -1,9 +1,9 @@
 <?php 
 
-include 'config.php';
+include 'credentials.php';
 
 //conexão
-$conn = mysqli_connect($servername, $username, $password, $dbname);
+$conn = mysqli_connect($servername, $username, $password);
 
 //validação da conexão
 if (!$conn) {
