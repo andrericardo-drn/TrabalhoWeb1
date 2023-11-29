@@ -3,36 +3,58 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/codigo/teste.css">
-    <title>Car Game</title>
+    <link rel="stylesheet" href="teste.css">
+    <title>Teemo Hunt</title>
 </head>
 <body>
     <div class="container">
-        <div id="linha4">
-            <img src="/assets/temo-removebg-preview.png" 
-                 alt="rocket" 
-                 class="player" 
-                 id="rocket">
-        </div> 
         <div id="linha1">
-            <img src="/assets/Malph.webp"  
+            <img src="assets/Malph.webp"  
                  alt="malphite" 
                  class="enemy" 
                  id="malphite">
         </div>
         <div id="linha2">
-            <img src="/assets/Skarner.jpg" 
+            <img src="assets/Skarner.jpg" 
                  alt="skarner" 
                  class="enemy" 
                  id="skarner">
         </div>
         <div id="linha3">
-            <img src="/assets/Singed.jpg" 
+            <img src="assets/Singed.jpg" 
                  alt="singed" 
                  class="enemy" 
                  id="singed">
         </div>
+        <div id="linha4">
+            <img src="assets/vaarus.png" 
+                 alt="vaarus" 
+                 class="enemy" 
+                 id="vaarus">
+        </div>
+        <div id="linha5">
+            <img src="assets/darius.webp" 
+                 alt="darius" 
+                 class="enemy" 
+                 id="darius">
+        </div>
+        <img src="assets/temo-removebg-preview.png" 
+                 alt="teemo" 
+                 class="player" 
+                 id="teemo">
+        </div>
+    <div>
+        <button class="btn btn-sm animated-button thar-three vlt">voltar</button>
+        <button class="btn btn-sm animated-button thar-three" onclick="start()">Jogar</button>
+    <div class="Hub">
+        <p>TIMER</p>
+        <p class="timer" id='Cronometro'>00:00</p>        
+        <p>POINTS</p>
+        <div class="timer"  id="Pontos">
+            0
+        </div>
     </div>
-    <script src="/codigo/testejs.js"></script>
+    </div>
+    <script src="testejs.js"></script>
 </body>
 </html>

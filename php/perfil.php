@@ -1,8 +1,6 @@
 <?php
-
-
 require 'autenticacao.php';
-require_once (__DIR__ . '/../config.php');
+require_once 'credentials.php';
 
 $conn = new mysqli($servername, $username, $password, $dbname);
 
