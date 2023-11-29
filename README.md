@@ -3,9 +3,9 @@
 É uma aplicação web de um jogo de digitação onde o objetivo é fugir dos inimigos de teemo.
 
     Nome dos Integrantes:
-        Gabriel Chioquetta Obladen,
+        Gabriel Chioquetta,
         Caua,
-        André
+        André Ricardo;
 
 
 ## Descrição do Sistema
