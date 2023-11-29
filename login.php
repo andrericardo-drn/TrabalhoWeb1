@@ -1,9 +1,8 @@
 <?php
-include 'config.php';
+include('config.php');
 require "php/autenticacao.php";
 
 $conn = mysqli_connect($servername, $username, $password, $dbname);
-
     if(!$conn){
     die('Problemas ao conectar ao BD: ' . mysqli_connect_error());
     }
@@ -35,10 +34,10 @@ if (!$login && $_SERVER["REQUEST_METHOD"] == "POST"){
 
           $_SESSION["user_id"] = $user["IdPlayer"];
           $_SESSION["user_name"] = $user["NomePlayer"];
-          $_SESSION["user_user"] = $user["UsuarioPlayer"];
-          $_SESSION["user_user"] = $user["SenhaPlayer"];
+          $_SESSION["user_username"] = $user["UsuarioPlayer"];
+          $_SESSION["user_senha"] = $user["SenhaPlayer"];
           $_SESSION["user_email"] = $user["EmailPlayer"];
-
+          
           header("Location: ../index.php");
           exit();
         }
@@ -59,8 +58,6 @@ if (!$login && $_SERVER["REQUEST_METHOD"] == "POST"){
   
 }
 ?>
-
-
 <!DOCTYPE html>
 <html lang="pt-br">
     <head>
@@ -79,11 +76,9 @@ if (!$login && $_SERVER["REQUEST_METHOD"] == "POST"){
         </h1>
         <h3>
             <strong>Você já está logado!</strong>
-        </h3>
-        <h3>
-            <strong>Nome: <?php echo $_SESSION["user_name"] ?></strong><br>
-            <strong>Email: <?php echo $_SESSION["user_email"] ?> </strong>
-            <strong></strong>
+            <strong> NOME: <?php echo $_SESSION["user_name"]?> </strong><br>
+            <strong> EMAIL: <?php echo $_SESSION["user_email"]?> </strong>
+
         </h3>
             <form action="../index.php">
                 <div class="card-footer">
@@ -102,22 +97,26 @@ if (!$login && $_SERVER["REQUEST_METHOD"] == "POST"){
             <div class="card-header">
                 <h2>Login</h2>
             </div>
-            <div class="card-content">
-                <?php if ($error): ?> <h3 class="erro"><?php echo $error_msg; ?></h3>
-                <?php endif; ?>
-                <div class="card-content-area">
-                    <label for="usuario">Usuario</label>
-                    <input type="text" name="usuario" autocomplete="off">
-                </div>
-                <div class="card-content-area">
-                    <label for="password">Senha</label>
-                    <input type="password" name="senha" autocomplete="off">
-                </div>
+    <div class="card-content">
+        <?php if ($error): ?>
+            <h3 class="erro"><?php echo $error_msg; ?></h3>
+        <?php endif; ?>
+            <div class="card-content-area">
+                <label for="usuario">Usuario</label>
+                <input type="text" name="usuario" autocomplete="off">
+                    </div>
+            <div class="card-content-area">
+                <label for="password">Senha</label>
+                <input type="password" name="senha" autocomplete="off">
             </div>
-            <div class="card-footer">
-                <button type="submit" class="submit">Login</button>
-                <a href="cadastro.php" class="ir_cadastrar">Não possui uma conta? Cadastre-se</a>
-            </div>
+    </div>
+    <div class="card-footer">
+        <button type="submit" class="submit">Login</button>
+            <a href="cadastro.php" class="ir_cadastrar">
+                Não possui uma conta? Cadastre-se
+            </a>
+    </div>
         </form>
+    </div>
     </body>
 </html>

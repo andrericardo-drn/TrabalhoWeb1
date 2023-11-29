@@ -1,6 +1,6 @@
 <?php
-  include(__DIR__ . '/../config.php');
-  require "validacao.php";
+  include('config.php');
+  require "php/validacao.php";
 
     $conn = mysqli_connect($servername, $username, $password, $dbname);
     if(!$conn){
