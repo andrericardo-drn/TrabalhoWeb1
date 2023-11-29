@@ -18,7 +18,7 @@ Validação de dados cadastrais.
 
 ## Funcionamento e como usar
 
-Abrir o ```config.php``` e trocar as credenciais para o seu usuário, senha e servidor.
+Abrir o ```credentials.php``` e trocar as credenciais para o seu usuário, senha e servidor.
 Abrir o ```setup.php``` para criar a database e as tabelas.
 Por fim apertar o link de Login que aparece após a criação das tabelas no setup.php
 
