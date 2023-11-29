@@ -16,7 +16,7 @@ function twoDigits(digit){ //fins esteticos coloca ozero na frente
 function start(){
   Cronometro()
   interval= setInterval(Cronometro,10)
-  let inimigosElements = document.getElementsByClassName("inimigos");
+  let inimigosElements = document.getElementsByClassName("enemy");
   for (const element of inimigosElements) {
     let inimigoElement = element;
     inimigoElement.style.animationPlayState = 'running';

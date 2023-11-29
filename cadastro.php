@@ -1,5 +1,5 @@
 <?php
-  include('php/credentials.php');
+  include 'credentials.php';
   require "php/validacao.php";
 
     $conn = mysqli_connect($servername, $username, $password, $dbname);

@@ -32,26 +32,31 @@ body {
 #malphite {
   left: 30px;
   animation: malphite 6s infinite linear;
+  animation-play-state: paused;
 }
 
 #skarner {
   left: 125px;
   animation: skarner 7s infinite linear;
+  animation-play-state: paused;
 }
 
 #singed {
   left: 220px;
   animation: singed  5s infinite linear;
+  animation-play-state: paused;
 }
 
 #vaarus {
   left: 300px;
   animation: singed  4s infinite linear;
+  animation-play-state: paused;
 }
 
 #darius {
   left: 400px;
   animation: singed  8s infinite linear;
+  animation-play-state: paused;
 }
 
 @keyframes malphite{
