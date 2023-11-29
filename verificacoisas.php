@@ -18,14 +18,14 @@ if(!$query){
   die('Error:' . mysqli_connect_error());
 }
 
-$sql = "select Id, nome, email, senha from Jogadores";
+$sql = "SELECT IdPlayer, NomePlayer, UsuarioPlayer, SenhaPlayer FROM player; ";
 $query_jogadores = mysqli_query($conn, $sql);
 
 if(!$query_jogadores){
   die('Error:' . mysqli_connect_error());
 }
 
-$sql = "select * from Ligas";
+$sql = "SELECT * FROM liga; ";
 $query_ligas = mysqli_query($conn, $sql);
 
 if(!$query_ligas){

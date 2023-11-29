@@ -1,0 +1,107 @@
+* {
+  margin:0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  background-color: #eee;
+}
+
+.container{
+  width: 500px;
+  height: 700px;
+  background-color: #fff;
+  position: relative;
+  overflow: hidden;/*tudo que sair some*/
+}
+
+.enemy {
+  width: 30px;
+  height: 30px;
+  position: absolute;
+  top: 0;
+}
+
+#linha4 {
+  width: auto;
+  height: 100%;
+  background: linear-gradient(to right, red,blue, yellow, purple);
+}
+
+#malphite {
+  left: 30px;
+  animation: malphite 4s infinite linear;
+}
+
+#skarner {
+  left: 125px;
+  animation: skarner 7s infinite linear;
+}
+
+#singed {
+  left: 220px;
+  animation: singed  5s infinite linear;
+}
+
+@keyframes malphite{
+    0% {
+      top: -30vh;
+    }
+    100% {
+      top: 100vh;
+    }
+}
+
+@keyframes skarner {
+  0% {
+    top: -30vh;
+  }
+  100% {
+    top: 100vh;
+  }
+}
+
+@keyframes singed{
+  0% {
+    top: -30vh;
+  }
+  100% {
+    top: 100vh;
+  }
+}
+
+.player{
+  width: 50px;
+  height: 50px;
+  position: absolute;
+  bottom: 10px;
+  left: 125px;
+  transition: ease; 
+}
+
+#background {
+  /*background-image algo assim*/
+  width: 100px;
+  height: 100%;
+  object-fit: cover;
+}
+
+#start {
+  position: absolute;
+  top: 60vh;
+  left: 47vw;
+  z-index: 50;
+  font-size: 2rem;
+  background-color: rgb(245, 99, 99);
+  color: white;
+  padding: 5px;
+  border-radius: 20px;
+  cursor: pointer;
+}
