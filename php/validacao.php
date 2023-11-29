@@ -1,5 +1,5 @@
 <?php
-include 'config.php';
+include(__DIR__ . '/../config.php');
 
 $conn = mysqli_connect($servername, $username, $password, $dbname);
 if(!$conn){
@@ -20,7 +20,7 @@ function verifica_campo($texto){
   return $texto;
 }
 
-$nome = $email = $senha =  "";
+$nome = $usuario = $senha = $email =  "";
 $erro = false;
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
@@ -33,11 +33,23 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $nome = verifica_campo($_POST["nome"]);
   }
 
+  if(empty($_POST["usuario"])){
+    $erro_usuario = "O usuario é obrigatório.";
+    $erro = true;
+  }
+  else{
+    $usuario = verifica_campo($_POST["usuario"]);
+  }
+
 
 if (empty($_POST["senha"])){
     $erro_senha = "A Senha é obrigatória";
     $erro = true;
   }
+  else{
+    $senha = verifica_campo($_POST["senha"]);
+  }
+
 
 if(empty($_POST["email"])){
     $erro_email = "O Email é obrigatório.";
