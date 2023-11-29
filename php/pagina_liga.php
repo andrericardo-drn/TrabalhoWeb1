@@ -9,7 +9,7 @@
     <h1>Página da Liga</h1>
 
     <?php
-    require_once "credentials.php";
+    require_once "config.php";
     // Conectar ao banco de dados
     $conn = new mysqli($servername, $username, $password, $dbname);
 

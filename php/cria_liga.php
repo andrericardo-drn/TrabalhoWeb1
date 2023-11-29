@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="cria_liga.css">
     <title>Gestão de Ligas</title>
 </head>
 <body>
@@ -13,23 +14,17 @@
         // Processamento do formulário de criação de liga
         if (isset($_POST["criar_liga"])) {
             $nome = htmlspecialchars($_POST["nome"]);
-            $descricao = htmlspecialchars($_POST["descricao"]);
-            $quantidade_membros = htmlspecialchars($_POST["quantidade_membros"]);
-
-            // Aqui você pode adicionar validações adicionais
+            $plv_chave = htmlspecialchars($_POST["plv_chave"]);
 
             echo "<h2>Liga Criada com Sucesso:</h2>";
             echo "<p><strong>Nome da Liga:</strong> $nome</p>";
-            echo "<p><strong>Descrição:</strong> $descricao</p>";
-            echo "<p><strong>Quantidade Membros:</strong> $quantidade_membros</p>";
+            echo "<p><strong>Palavra Chave:</strong> $plv_chave</p>";
         }
 
         // Processamento do formulário de entrada em uma liga
         if (isset($_POST["entrar_liga"])) {
             $nome_jogador = htmlspecialchars($_POST["nome_jogador"]);
             $codigo_liga = htmlspecialchars($_POST["codigo_liga"]);
-
-            // Aqui você pode adicionar validações adicionais
 
             echo "<h2>Você entrou na Liga com sucesso:</h2>";
             echo "<p><strong>Nome do Jogador:</strong> $nome_jogador</p>";
@@ -40,17 +35,14 @@
 
     <!-- Formulário para criar uma liga -->
     <h2>Criar Liga</h2>
-    <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
+    <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post" class="cria_liga">
         <label for="nome">Nome da Liga:</label>
         <input type="text" id="nome" name="nome" required>
 
-        <label for="descricao">Descrição:</label>
-        <textarea id="descricao" name="descricao" required></textarea>
+        <label for="plv_chave">Palavra Chave:</label>
+        <input type="number" id="plv_chave" name="plv_chave" required>
 
-        <label for="quantidade_membros">Quantidade Membros:</label>
-        <input type="number" id="quantidade_membros" name="quantidade_membros" required>
-
-        <button type="submit" name="criar_liga">Criar Liga</button>
+        <button type="submit" name="criar_liga" class="btn btn-sm animated-button thar-three">Criar Liga</button>
     </form>
 
     <!-- Formulário para entrar em uma liga -->
@@ -62,7 +54,7 @@
         <label for="codigo_liga">Código da Liga:</label>
         <input type="text" id="codigo_liga" name="codigo_liga" required>
 
-        <button type="submit" name="entrar_liga">Entrar na Liga</button>
+        <button type="submit" name="entrar_liga" class="btn btn-sm animated-button thar-three">Entrar na Liga</button>
     </form>
 </body>
 </html>
