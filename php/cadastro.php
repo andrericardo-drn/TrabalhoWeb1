@@ -1,5 +1,5 @@
 <?php
-  include '../config.php';
+  include(__DIR__ . '/../config.php');
   require "validacao.php";
 
     $conn = mysqli_connect($servername, $username, $password, $dbname);
@@ -15,10 +15,10 @@
     }
     //INSERÇÃO DE DADOS DE CADASTRO NA TABELA
     if ($_SERVER["REQUEST_METHOD"] == "POST" && $erro == false) {
-     $sql = "INSERT INTO jogadores
-    (nome, email, senha) VALUES
-    ('$nome', '$email', '$senha');";
-    }
+        $sql = "INSERT INTO player
+        (NomePlayer,UsuarioPlayer, SenhaPlayer, EmailPlayer) VALUES
+        ('$nome','$usuario', '$senha', '$email');";
+        }
 
 if(mysqli_query($conn, $sql)){
 $success = true;
