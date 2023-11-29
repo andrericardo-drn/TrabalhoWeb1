@@ -138,6 +138,6 @@ mysqli_close($conn);
 
 <html>
     <body>
-    <a href="index.php"> Login! </a>
+    <a href="login.php"> Login! </a>
     </body>
 </html>

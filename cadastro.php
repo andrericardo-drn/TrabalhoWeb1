@@ -35,11 +35,11 @@ $error = true;
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <link rel="shortcut icon" href="/assets/favicon.ico" type="image/x-icon">
-        <link rel="stylesheet" href="css/login.css">
+        <link rel="stylesheet" href="cadastro.css">
         <title>Cadastre-se</title>
     </head>
     <body>
-        <div id="login">
+        <div id="container">
             <form method="POST" id="form" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" class="card">
                 <div class="card-header ">
 
@@ -51,22 +51,20 @@ $error = true;
                         ?>
                     </div>
                     <?php endif; ?>
-                    <h2>Realize seu cadastro</h2>
-                    <img src="../images/baleia.png" width=380px>
+                    <h1>Realize seu cadastro</h1>
                 </div>
-                
-                <div class="card-content <?php if(!empty($erro_nome)){echo "has-error";}?>">
+                <div class="card-content formStyle <?php if(!empty($erro_nome)){echo "has-error";}?>">
                     <div class="card-content-area">
                         <label for="nome">Nome</label>
                         <input type="text" name="nome" value="<?php echo $nome; ?>" autocomplete="off">
-                    </div>       
+                    </div>
                     <div>
                         <?php if (!empty($erro_nome)): ?>
                         <span class="help-block"><?php echo $erro_nome ?></span>
                         <?php endIf; ?>
                     </div>
 
-                    <div class="card-content-area <?php if(!empty($erro_usuario)){echo "has-error";}?>">
+                    <div class="card-content-area formStyle <?php if(!empty($erro_usuario)){echo "has-error";}?>">
                         <label for="usuario">Usuario</label>
                         <input type="text" name="usuario" value="<?php echo $usuario; ?>" autocomplete="off">
                     </div> 
@@ -76,7 +74,7 @@ $error = true;
                         <?php endIf; ?>
                     </div>
 
-                    <div class="card-content-area <?php if(!empty($erro_senha)){echo "has-error";}?>">
+                    <div class="card-content-area formStyle <?php if(!empty($erro_senha)){echo "has-error";}?>">
                         <label for="senha">Senha</label>
                         <input type="text" name="senha" value="<?php echo $senha; ?>" autocomplete="off">
                     </div> 
@@ -86,7 +84,7 @@ $error = true;
                         <?php endIf; ?>
                     </div>
 
-                    <div class="card-content-area <?php if(!empty($erro_email)){echo "has-error";}?>">
+                    <div class="card-content-area formStyle <?php if(!empty($erro_email)){echo "has-error";}?>">
                         <label for="email">Email</label>
                         <input type="text" name="email" value="<?php echo $email; ?>" autocomplete="off">
                     </div>
@@ -97,8 +95,8 @@ $error = true;
                     </div>
                 </div>  
                 <div class="card-footer">
-                    <button type="submit" class="submit">Cadastre-se</button>
-                    <a href="login.php" class="fazer_login">Já possui uma conta? Login</a>
+                    <button type="submit" class="btn btn-sm animated-button thar-three">Cadastre-se</button>
+                    <a href="login.php" class="logar">Já possui uma conta? Login</a>
                 </div>
             </form>
         </div>
