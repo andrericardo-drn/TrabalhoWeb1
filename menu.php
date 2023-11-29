@@ -1,3 +1,8 @@
+<?php 
+session_start(); 
+
+echo $_SESSION["user_name"];
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -9,10 +14,11 @@
 </head>
 <body>
     <div class="container">
+    <?php ?>
         <div class="menu">
             <button class="btn btn-sm animated-button thar-three"><a href="#">Jogar</a></button>
-            <button class="btn btn-sm animated-button thar-three">Records</button>
-            <button class="btn btn-sm animated-button thar-three">Como Jogar</button>
+            <button class="btn btn-sm animated-button thar-three"><a href="#">Histórico de Partidas</a></button>
+            <button class="btn btn-sm animated-button thar-three"><a href="#">Ligas</a></button>
         </div>
     </div>
 </body>

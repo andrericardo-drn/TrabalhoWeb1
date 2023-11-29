@@ -1,7 +1,13 @@
 <?php
-include('config.php');
+include('credentials.php');
 require "php/autenticacao.php";
 
+if($login){
+    echo 'login = true';
+}
+else{
+    echo 'login = false';
+}
 $conn = mysqli_connect($servername, $username, $password, $dbname);
     if(!$conn){
     die('Problemas ao conectar ao BD: ' . mysqli_connect_error());
@@ -14,11 +20,11 @@ $conn = mysqli_connect($servername, $username, $password, $dbname);
     die('Error:' . mysqli_connect_error());
     }
 
-$error = false;
+    $error = false;
 $usuario = $senha = "";
 
 if (!$login && $_SERVER["REQUEST_METHOD"] == "POST"){
-
+    $conn = mysqli_connect($servername, $username, $password, $dbname);
     $usuario = mysqli_real_escape_string($conn,$_POST["usuario"]);
     $senha = mysqli_real_escape_string($conn,$_POST["senha"]);
 
@@ -37,8 +43,6 @@ if (!$login && $_SERVER["REQUEST_METHOD"] == "POST"){
           $_SESSION["user_username"] = $user["UsuarioPlayer"];
           $_SESSION["user_senha"] = $user["SenhaPlayer"];
           $_SESSION["user_email"] = $user["EmailPlayer"];
-          
-          header("Location: ../index.php");
           exit();
         }
         else {
@@ -57,6 +61,7 @@ if (!$login && $_SERVER["REQUEST_METHOD"] == "POST"){
     }
   
 }
+    
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -64,7 +69,7 @@ if (!$login && $_SERVER["REQUEST_METHOD"] == "POST"){
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         
-        <link rel="stylesheet" href="../css/login.css">
+        <link rel="stylesheet" href="css/login.css">
         <title>Login</title>
     </head>
 
@@ -72,18 +77,17 @@ if (!$login && $_SERVER["REQUEST_METHOD"] == "POST"){
     <?php if ($login): ?>
     <div class="loginfeito">
         <h1>
-            <strong>OOPS!</strong>
+            <strong>Welcome Back</strong>
         </h1>
         <h3>
-            <strong>Você já está logado!</strong>
-            <strong> NOME: <?php echo $_SESSION["user_name"]?> </strong><br>
-            <strong> EMAIL: <?php echo $_SESSION["user_email"]?> </strong>
+            <strong> <?php echo $_SESSION["user_name"]?> </strong><br>
+            <strong> <?php echo $_SESSION["user_email"]?> </strong>
 
         </h3>
-            <form action="../index.php">
+            <form action="logout.php">
                 <div class="card-footer">
                     <button type="submit" class="submitxd">
-                        Ir para a pagina inicial
+                        Logout
                     </button>
                 </div>
             </form>

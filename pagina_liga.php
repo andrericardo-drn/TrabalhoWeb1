@@ -6,7 +6,7 @@
     <title>Página da Liga</title>
 </head>
 <body>
-    <h1>Página da Liga</h1>
+
 
     <?php
     require_once "credentials.php";
@@ -19,7 +19,7 @@
     }
 
     // Consulta SQL para recuperar dados da liga
-    $sql = "SELECT nome, pontuacao_total, pontuacao_semanal FROM jogadores";
+    $sql = "SELECT IdLiga, PalavraChaveLiga, NomeLiga, PontuacaoTotalLiga, PontuacaoSemanalLiga FROM liga";
     $result = $conn->query($sql);
 
     // Verificar se há resultados
@@ -27,41 +27,19 @@
     ?>
         <!-- Seção de Todos os Jogadores -->
         <section>
-            <h3>Todos os Jogadores</h3>
             <ul>
                 <?php while ($row = $result->fetch_assoc()) : ?>
-                    <li><?php echo $row['nome']; ?></li>
+                    <p><?php echo 'Nome: ' ?><?php echo $row['NomeLiga']; ?><p>
+                    <p><?php echo 'Total: ' ?><?php echo $row['PontuacaoTotalLiga']; ?><p>
+                    <p><?php echo 'Semanal: ' ?><?php echo $row['PontuacaoSemanalLiga']; ?><p>
+                        <br>
+                   
+                        
                 <?php endwhile; ?>
             </ul>
         </section>
 
-        <!-- Seção de Pontuação Total -->
-        <section>
-            <h3>Pontuação Total</h3>
-            <ul>
-                <?php
-                // Resetar o ponteiro do resultado para o início
-                $result->data_seek(0);
-                while ($row = $result->fetch_assoc()) :
-                ?>
-                    <li><?php echo "{$row['nome']}: {$row['pontuacao_total']} pontos"; ?></li>
-                <?php endwhile; ?>
-            </ul>
-        </section>
-
-        <!-- Seção de Pontuação Semanal -->
-        <section>
-            <h3>Pontuação Semanal</h3>
-            <ul>
-                <?php
-                // Resetar o ponteiro do resultado para o início
-                $result->data_seek(0);
-                while ($row = $result->fetch_assoc()) :
-                ?>
-                    <li><?php echo "{$row['nome']}: {$row['pontuacao_semanal']} pontos"; ?></li>
-                <?php endwhile; ?>
-            </ul>
-        </section>
+        
     <?php
     } else {
         echo "Não há jogadores na liga.";

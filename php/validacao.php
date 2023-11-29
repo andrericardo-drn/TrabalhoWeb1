@@ -1,5 +1,5 @@
 <?php
-include(__DIR__ . '/../config.php');
+include(__DIR__ . '/../credentials.php');
 
 $conn = mysqli_connect($servername, $username, $password, $dbname);
 if(!$conn){

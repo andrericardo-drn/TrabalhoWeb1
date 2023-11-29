@@ -35,7 +35,7 @@ $error = true;
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <link rel="shortcut icon" href="/assets/favicon.ico" type="image/x-icon">
-        <link rel="stylesheet" href="../css/login.css">
+        <link rel="stylesheet" href="css/login.css">
         <title>Cadastre-se</title>
     </head>
     <body>
